@@ -10,8 +10,8 @@ function Person () {
         event.preventDefault();
         setName( event.target.newName.value );
         setGender( event.target.gender.value );
-        let oldAge = event.target.age.value;
-        axios.post( `${process.env.REACT_APP_SERVER}/person?name=${name}&age=${oldAge}&gender=${gender}` )
+        setAge( event.target.age.value );
+        axios.post( `${process.env.REACT_APP_SERVER}/person?name=${name}&age=${age}&gender=${gender}` )
             .then( response => {
                 setAge( response.data );
             } )
